@@ -81,8 +81,9 @@ export default function Home() {
                 if (chats.length === 1) {
                   return (
                     <div key={chat.id} className={styles.nullChat}>
-                      From your projects to your deepest fears. I am here to
-                      you.
+                      <h3>From your projects</h3>
+                      <h4>to your deepest fears.</h4>
+                      <h4>Ask me anything</h4>
                     </div>
                   );
                 }
