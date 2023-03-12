@@ -57,7 +57,7 @@ export default function Home() {
       </Head>
       <nav className={styles.nav}>
         <div>
-          <h1>ChatChuck</h1>
+          <h1>ChatChuckAI</h1>
         </div>
         <FaList />
         <ul>
@@ -69,10 +69,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.logoDiv}>
           <h1>Ask me anything</h1>
-          {/* <h5>
-            From your work projects and your deepest fears. I will listen to
-            you.
-          </h5> */}
+          <h3>I'm a robot at your service</h3>
         </div>
         <div className={styles.chatDiv}>
           <div className={styles.chatBox}>
@@ -81,7 +78,7 @@ export default function Home() {
                 if (chats.length === 1) {
                   return (
                     <div key={chat.id} className={styles.nullChat}>
-                      <h3>From your projects</h3>
+                      <h3>From your personal projects</h3>
                       <h4>to your deepest fears.</h4>
                       <h4>Ask me anything</h4>
                     </div>
@@ -116,6 +113,11 @@ export default function Home() {
           <div className={styles.decorator}></div>
         </div>
       </main>
+      <div className={styles.footnote}>
+        <h4>Built by Ezeani Chucks</h4>
+        <h6>email: concord_chucks@yahoo.com</h6>
+        <h6>phone: +2348067268692</h6>
+      </div>
     </>
   );
 }
