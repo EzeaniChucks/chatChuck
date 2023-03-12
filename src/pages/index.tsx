@@ -21,7 +21,6 @@ export default function Home() {
     ]);
     setFetching(true);
     setQuestion("");
-    // console.log(question);
     const jsonStr = JSON.stringify(question);
     fetch("https://chatchuck-380416.uc.r.appspot.com", {
       method: "POST",
@@ -70,10 +69,10 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.logoDiv}>
           <h1>Ask me anything</h1>
-          <h5>
+          {/* <h5>
             From your work projects and your deepest fears. I will listen to
             you.
-          </h5>
+          </h5> */}
         </div>
         <div className={styles.chatDiv}>
           <div className={styles.chatBox}>
@@ -82,7 +81,8 @@ export default function Home() {
                 if (chats.length === 1) {
                   return (
                     <div key={chat.id} className={styles.nullChat}>
-                      Start your first conversation below
+                      From your projects to your deepest fears. I am here to
+                      you.
                     </div>
                   );
                 }
