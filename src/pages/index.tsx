@@ -69,7 +69,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.logoDiv}>
           <h1>Ask me anything</h1>
-          <h3>I'm a robot at your service</h3>
+          <h3>I am a robot at your service</h3>
         </div>
         <div className={styles.chatDiv}>
           <div className={styles.chatBox}>
