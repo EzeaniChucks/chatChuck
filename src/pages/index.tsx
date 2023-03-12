@@ -115,7 +115,7 @@ export default function Home() {
       </main>
       <div className={styles.footnote}>
         <h4>Built by Ezeani Chucks</h4>
-        <h6>email: concord_chucks@yahoo.com</h6>
+        <h6>email: concord_chucks2@yahoo.com</h6>
         <h6>phone: +2348067268692</h6>
       </div>
     </>
