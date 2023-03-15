@@ -38,9 +38,7 @@ export default function Home() {
 
     contextArr.push({ role: "user", content: question });
     const jsonStr = JSON.stringify(contextArr);
-    // fetch("https://chatchuck-380416.uc.r.appspot.com", {
-
-    fetch("http://localhost:8080", {
+    fetch("https://chatchuck-380416.uc.r.appspot.com", {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
