@@ -21,8 +21,26 @@ export default function Home() {
     ]);
     setFetching(true);
     setQuestion("");
-    const jsonStr = JSON.stringify(question);
-    fetch("https://chatchuck-380416.uc.r.appspot.com", {
+    let contextArr = [{ role: "system", content: `You are a helpful guy` }];
+
+    if (chats[chats.length - 2]) {
+      contextArr.push({
+        role: "user",
+        content: chats[chats.length - 2].word.slice(0, 70),
+      });
+    }
+    if (chats[chats.length - 1] && chats[chats.length - 1].word) {
+      contextArr.push({
+        role: "assistant",
+        content: chats[chats.length - 1].word.slice(0, 70),
+      });
+    }
+
+    contextArr.push({ role: "user", content: question });
+    const jsonStr = JSON.stringify(contextArr);
+    // fetch("https://chatchuck-380416.uc.r.appspot.com", {
+
+    fetch("http://localhost:8080", {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
