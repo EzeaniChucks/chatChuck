@@ -38,7 +38,7 @@ export default function Home() {
 
     contextArr.push({ role: "user", content: question });
     const jsonStr = JSON.stringify(contextArr);
-    fetch("https://chatchuckserver.onrender.com", {
+    fetch("https://chatchuckexpress.onrender.com", {
       // fetch("http://localhost:8080", {
       method: "POST",
       headers: {
