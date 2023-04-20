@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/custom.module.css";
 import { useState } from "react";
 import { FaList } from "react-icons/fa";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,22 +38,18 @@ export default function Home() {
     }
 
     contextArr.push({ role: "user", content: question });
-    const jsonStr = JSON.stringify(contextArr);
-    fetch("https://chatchuckexpress.onrender.com", {
-      // fetch("http://localhost:8080", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain",
-      },
-      // mode: "no-cors",
-      body: jsonStr,
-    })
-      .then((result) => {
-        return result.json();
+    // const jsonStr = JSON.stringify(contextArr);
+    // console.log(jsonStr);
+
+    axios
+      // .post("http://localhost:8081", contextArr)
+      .post("https://chatchuckexpress.onrender.com", contextArr)
+      .then((result: any) => {
+        return result.data;
       })
-      .then((data) => {
+      .then((data: any) => {
         setFetching(false);
-        setChats((prev) => {
+        setChats((prev: any) => {
           return [
             ...prev,
             { id: chats.length + 2, word: data, status: "reply" },
@@ -63,6 +60,32 @@ export default function Home() {
         console.log(err);
         setFetching(false);
       });
+
+    // fetch("https://chatchuckexpress.onrender.com", {
+    // fetch("http://localhost:8081", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   // mode: "no-cors",
+    //   body: jsonStr,
+    // })
+    //   .then((result) => {
+    //     return result.json();
+    //   })
+    //   .then((data) => {
+    //     setFetching(false);
+    //     setChats((prev) => {
+    //       return [
+    //         ...prev,
+    //         { id: chats.length + 2, word: data, status: "reply" },
+    //       ];
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     setFetching(false);
+    //   });
   };
   return (
     <>
