@@ -38,7 +38,8 @@ export default function Home() {
 
     contextArr.push({ role: "user", content: question });
     const jsonStr = JSON.stringify(contextArr);
-    fetch("https://chatchuck-380416.uc.r.appspot.com", {
+    fetch("https://chatchuckserver.onrender.com", {
+      // fetch("http://localhost:8080", {
       method: "POST",
       headers: {
         "Content-Type": "text/plain",
@@ -85,7 +86,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.logoDiv}>
           <h1>Ask me anything</h1>
-          <h5>I am a robot at your service</h5>
+          <h5>I am always at your service</h5>
         </div>
         <div className={styles.chatDiv}>
           <div className={styles.chatBox}>
